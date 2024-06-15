@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #1e272e;
+}
+.container-pop{
+    position: fixed; 
+    z-index: 1; 
+    padding: 10px 10px ; 
+    left: 0;
+    top: 0;
+    width: 30%; 
+    height: 50%; 
+    margin-left: 34%;
+    margin-top: 12.5%;
+    background-color: rgb(248, 246, 246); 
+    background-color: rgba(250, 248, 248, 0.4);
+}
+.popup{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #93b9df9a;
+    position: fixed;
+    top: 0;
+}
+.submit{
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #1E2328;
+    background-color: #F5B301;
+    border: none;
+}
+.submit:hover{
+    cursor: pointer;
+    border: solid #1E2328 1px;
+}
+.close {
+    position: absolute;
+    right: 32px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    opacity: 0.5;
+}
+.close:hover {
+    opacity: 1;
+}
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.list li {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 5px;
+    border-radius: 5px;
+}
+.list li.plus {
+    background-color: #2ecc7099;
+}
+.list li.minus {
+    background-color: #c03a2b93;
+}
+.container-popAI{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed; 
+    z-index: 1; 
+    padding: 10px 10px ; 
+    left: 0;
+    top: 0;
+    width: 75%; 
+    height: 80%; 
+    margin-left: 11%;
+    margin-top: 5%;
+    background-color: rgb(248, 246, 246); 
+    background-color: #1E2328;
+}
+.result{
+    overflow-y: auto;
+    height: 85%;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.searchInputWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.searchInput {
+    width: 20rem;
+    height: 2rem;
+    padding: 0 1rem; 
+    border-radius: 2rem;
+    border: none;
+    transition: transform 0.1s ease-in-out;
+}
+::placeholder {
+    color: #a1a1a1;
+}
+:focus::placeholder {
+    text-indent: -999px;
+}
+.searchInput:focus {
+    outline: none;
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+}
+.searchInputIcon {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.5rem;
+    color: #a1a1a1;
+    transition: all 0.1s ease-in-out;
+}
+.aiQue {
+    color: #F5B301;
+    background-color: #1E2328;
+    border-left: solid 5px #F5B301;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+}
+.aiAns {
+    color: #07dd35;
+    background-color: #1E2328;
+    border-left: solid 5px #07dd35;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+}
+.button {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 9999rem;
+    background: #efefef;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    isolation: isolate;
+    overflow: hidden;
+}
+.button > span.text {
+    color: #121212;
+    width: 100%;
+    text-align: left;
+    padding-block: 12px;
+    padding-left: 24px;
+    z-index: 2;
+    transition: all 200ms ease;
+}
+.button > div.overlay {
+    color: #ededed;
+    width: 48px;
+    height: calc(100% - 2px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px;
+    border-radius: inherit;
+    background: #242424;
+    position: absolute;
+    right: 1px;
+    z-index: 1;
+    transition: all 400ms ease;
+}
+.button:hover > span.text, .button:focus > span.text {
+    color: #ededed;
+}
+.button:hover > div.overlay, .button:focus > div.overlay {
+    width: calc(100% - 2px);
+    transition: width 200ms ease;
+}
